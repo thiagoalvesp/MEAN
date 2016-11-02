@@ -15,23 +15,30 @@ module.exports = function() {
     controller.obtemContato = function(req,res){
 
         var idContato = req.params.id;
-
         var contato = contatos.filter(function(contato){
                return contato._id == idContato; 
         })[0];
+
+        console.log(contato);
 
         contato ? res.json(contato) : res.status(404).send('Contato não encontrado');
     };
 
     controller.removeContato = function(req, res)
     {
-        var idContato = req.params.id ;
-        contatos = contatos.filter(function(){
+        var idContato = req.params.id;
+        contatos = contatos.filter(function(contato){
             return contato._id != idContato;
         });
-        res.send(204).end();
-    }
 
+        res.send(204).end();
+    };
+
+
+    controller.salvaContato = function(req, res)
+    {
+
+    }
         
 
     return controller;
