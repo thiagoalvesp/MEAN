@@ -7,12 +7,21 @@
 		<label for="nome">Nome completo</label>
 		<input type="text" class="form-control" id="nome" name="nome" required ng-model="contato.nome">
 	</div>
-	<div lass="form-group">
+	<div class="form-group">
 		<label for="email">Email</label>
 		<div class="input-group">
             <span class="input-group-addon">@</span>
 			<input type="text" class="form-control" placeholder="email@exemplo.com" id="nome" name="nome" required ng-model="contato.email">
 		</div>
+	</div>
+	<div class="form-group">
+		<label for="emergencia">Emergência</label>
+		<select name="emergencia" 
+				id="emergencia"
+				class="form-control"
+				ng-model="contato.emergencia"
+				ng-options="contato._id as contato.nome for contato in contatos">
+		</select>
 	</div>
 	<div>
 		<button type="submit" class="btn btn-primary">
